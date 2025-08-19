@@ -1,6 +1,7 @@
 import reflex as rx
 import datetime
 from link_bio.styles.styles import Size as Size
+from link_bio.styles.colors import TextColor as TextColors
 
 
 def footer() -> rx.Component:
@@ -19,7 +20,9 @@ def footer() -> rx.Component:
         rx.text("Powered by Reflex",
                 fontSize=Size.MEDIUM.value,
                 align_self="center",
-                marginTop="0px !important",
+                marginTop=Size.ZERO.value,
                 ),
         marginBottom=Size.BIG.value,
+        padding_bottom=Size.MEDIUM.value,
+        color=TextColors.FOOTER.value,
     )

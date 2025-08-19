@@ -1,54 +1,63 @@
 import reflex as rx
 from link_bio.components.link_button import link_button
 from link_bio.components.title import title
-
+from link_bio import constants as c
 def links() -> rx.Component:
     return rx.vstack(
         title(
             "Comunidad"
             ),
         link_button(
-            "Twich",
+            "Twitch",
             "Directos de lunes a viernes",
-            "https://twich.tx/mouredev"
+            c.TWITCH_URL
             ),
         link_button(
             "YouTube",
             "Tutoriales semanales",
-            "https://youtube.com/@mouredev"
+            c.YOUTUBE_URL
             ),
         link_button(
             "YouTube (canal secundario)",
             "Tutoriales semanales",
-            "https://youtube.com/@mouredevtv"
+            c.YOUTUBE_SECONDARY_URL
             ),
         link_button(
             "Discord",
             "El chat de la comunidad",
-            "https://discord.gg/mouredev"
+            c.DISCORD_URL
             ),
         title(
-            "Comunidad"
+            "Recursos y más"
             ),
         link_button(
-            "Twich",
-            "Directos de lunes a viernes",
-            "https://twich.tx/mouredev"
+            "Git y GitHub desde cero",
+            "Aqui puedes comprar mis libros fisicos",
+            c.GIT_URL
             ),
         link_button(
-            "YouTube",
-            "Tutoriales semanales",
-            "https://youtube.com/@mouredev"
+            "Paginas de compras para tu setup",
+            "Compra Gamer",
+            c.COMPRAGAMER_URL
             ),
         link_button(
-            "YouTube (canal secundario)",
-            "Tutoriales semanales",
-            "https://youtube.com/@mouredevtv"
+            "Mi linkeding",
+            "Mi desarrollo profesional",
+            c.LINKEDIN_URL
             ),
         link_button(
-            "Discord",
-            "El chat de la comunidad",
-            "https://discord.gg/mouredev"
+            "Mis cursos en Udemy",
+            "Mis cursos de desarrollo",
+            c.UDEMY_URL
+            ),
+        title(
+            "Contacto"
+            ),
+        link_button(
+            "Email",
+            c.EMAIL_URL,
+            f"Juan Alonso - {c.EMAIL_URL}"
             ),
         width="100%",
+        spacing="4",
     )

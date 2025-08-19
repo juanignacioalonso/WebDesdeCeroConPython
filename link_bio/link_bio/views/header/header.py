@@ -1,6 +1,10 @@
 import reflex as rx
 from link_bio.components.link_icon import link_icon
 from link_bio.components.info_text import info_text
+from link_bio.components.title import title
+from link_bio.styles.colors import TextColor as TextColors
+from link_bio.styles.styles import Size as Size
+from link_bio import constants as c
 
 cards_data = [
     {"title": "+4", "body": "Años de experiencia"},
@@ -14,23 +18,23 @@ def header() -> rx.Component:
             rx.avatar(src="/logo.jpg",fallback="JI", variant="solid", size="7"),
             rx.vstack(
                 rx.heading(
-                    "Juan Ignacio Alonso", 
-                    size="6"
-                ),
+                    "Juan Ignacio Alonso",
+                    size="6",
+                    ),
                 rx.text(
                     "@juandev",
-                    marginTop="0px !important",
+                    marginTop=Size.ZERO.value,
+                    color = TextColors.BODY.value,
                 ),
                 rx.hstack(
-                    link_icon("https://x.com/mouredev"),
-                    link_icon("https://x.com/mouredev"),
-                    link_icon("https://x.com/mouredev"),
+                    link_icon(c.GIT_URL),
+                    link_icon(c.LINKEDIN_URL),
+                    link_icon(c.DISCORD_URL),
                 ),
                 alignItems="Start",
             ),
-
+            spacing="7",
         ),
-
 
         rx.flex(
             rx.foreach(
@@ -45,12 +49,17 @@ def header() -> rx.Component:
             width="100%",
         ),
 
-        rx.text("""Desarrollador Full Stack con experiencia en Python 
+        rx.text(
+                """
+                Desarrollador Full Stack con experiencia en Python 
                 (Django) y Angular, orientado a la creación de soluciones 
                 escalables y eficientes. Cuento con sólidos conocimientos en 
                 bases de datos relacionales y no relacionales, despliegue en la nube (AWS) 
                 y metodologías ágiles. Con capacidad para desempeñarme también en roles de soporte técnico.
-                Busco integrarme a equipos dinámicos con enfoque en calidad, buenas prácticas y resultados."""),
+                Busco integrarme a equipos dinámicos con enfoque en calidad, buenas prácticas y resultados.
+                """,
+                color=TextColors.BODY.value,
+                ),
         spacing="6",
         alignItems="Start",
     )
