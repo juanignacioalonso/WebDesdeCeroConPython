@@ -2,14 +2,19 @@ import reflex as rx
 from enum import Enum
 from .colors import Color as Colors
 from .colors import TextColor as TextColors
-from .fonts import Font as Fonts
+from .fonts import Font , FontWeight
 
 #Seteamos los estilos de la aplicacion, para que los cambios se apliquen en todos los componentes que lo necesiten.
 
 # Constants
-MAX_WIDTH = "600PX"
+MAX_WIDTH = "560PX"
 
 # Sizes 
+
+STYLESHEETS = [
+    'https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap',
+    'https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap'
+]
 
 # 0.5em = 8px, 1em = 16px,  2em = 32px  em  mantiene el espacio relativo al tamaño de la fuente del elemento padre
 
@@ -24,11 +29,13 @@ class Size(Enum):
 # Styles
 
 BASE_STYLES = {
-    "font_family": Fonts.DEFAULT.value,
+    "font_family": Font.DEFAULT.value,
+    "font_weigth": FontWeight.LIGHT.value,
     "background_color": Colors.BACKGROUND.value,
     rx.heading:{
         "color":TextColors.HEADER.value,
-        "font_family": Fonts.TITLE.value,
+        "font_family": Font.TITLE.value,
+        "font_weigth": FontWeight.MEDIUM.value,
     },
     rx.button:{
         "width":"100%",
@@ -50,7 +57,8 @@ BASE_STYLES = {
 }
 
 navbar_title_style = dict(
-    fontFamily=Fonts.LOGO.value,
+    fontFamily=Font.LOGO.value,
+    font_weigth= FontWeight.MEDIUM.value,
     font_size=Size.LARGE.value,
 )
 
@@ -61,12 +69,14 @@ title_style = dict(
 )
 
 button_title_style = dict (
-    fontFamily=Fonts.TITLE.value,
+    fontFamily=Font.TITLE.value,
+    font_weigth= FontWeight.MEDIUM.value,
     fontSize=Size.DEFAULT.value,
     color=TextColors.HEADER.value,
 )
 
 button_body_style = dict (
     fontSize=Size.MEDIUM.value,
+    font_weigth= FontWeight.LIGHT.value,
     color=TextColors.BODY.value,
 )
