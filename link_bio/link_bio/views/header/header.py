@@ -3,6 +3,7 @@ from link_bio.components.link_icon import link_icon
 from link_bio.components.info_text import info_text
 from link_bio.components.title import title
 from link_bio.styles.colors import TextColor as TextColors
+from link_bio.styles.colors import Color as Colors
 from link_bio.styles.styles import Size as Size
 from link_bio import constants as c
 
@@ -15,7 +16,16 @@ cards_data = [
 def header() -> rx.Component:
     return rx.vstack(
         rx.hstack(
-            rx.avatar(src="/logo.jpg",fallback="JI", variant="solid", size="7"),
+            rx.avatar(
+                src="Juan.jpeg",
+                fallback="JI", 
+                size="7",
+                color=TextColors.BODY.value,
+                bg=Colors.CONTENT.value,
+                padding="2px",
+                border="4px",
+                borderColor=Colors.PRIMARY.value,
+                ),
             rx.vstack(
                 rx.heading(
                     "Juan Ignacio Alonso",
@@ -27,9 +37,18 @@ def header() -> rx.Component:
                     color = TextColors.BODY.value,
                 ),
                 rx.hstack(
-                    link_icon(c.GIT_URL),
-                    link_icon(c.LINKEDIN_URL),
-                    link_icon(c.DISCORD_URL),
+                    link_icon(
+                        "icons/github2.svg",
+                        c.GIT_URL
+                        ),
+                    link_icon(
+                        "icons/linkedin2.svg",
+                        c.LINKEDIN_URL
+                        ),
+                    link_icon(
+                        "icons/discord2.svg",
+                        c.DISCORD_URL
+                        ),
                 ),
                 alignItems="Start",
             ),
@@ -59,6 +78,7 @@ def header() -> rx.Component:
                 Busco integrarme a equipos dinámicos con enfoque en calidad, buenas prácticas y resultados.
                 """,
                 color=TextColors.BODY.value,
+                font_size=Size.MEDIUM.value,
                 ),
         spacing="6",
         alignItems="Start",

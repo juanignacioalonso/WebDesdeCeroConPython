@@ -1,5 +1,6 @@
 import reflex as rx
 import datetime
+import link_bio.constants as c
 from link_bio.styles.styles import Size as Size
 from link_bio.styles.colors import TextColor as TextColors
 
@@ -7,12 +8,14 @@ from link_bio.styles.colors import TextColor as TextColors
 def footer() -> rx.Component:
     return rx.vstack(
         rx.image(
-            src="/favicon.ico",
+            src="logo.png",
+            heigth="auto",
+            width="300px",
             align_self="center",
             ),
         rx.link(
             f"2021-{datetime.date.today().year} DESARROLLADOR PYTHON",
-            href="https://mouredev.com",
+            href=c.GIT_URL,
             is_external=True,
             fontSize=Size.MEDIUM.value,
             align_self="center",

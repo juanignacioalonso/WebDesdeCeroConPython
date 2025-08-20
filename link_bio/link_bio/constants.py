@@ -13,4 +13,8 @@ LINKEDIN_URL = "https://www.linkedin.com/in/juan-ignacio-alonso-a65305121/"
 UDEMY_URL = "https://www.udemy.com/home/my-courses/learning/"
 
 #Contacto
-EMAIL_URL = "zalbak87@gmail.com"    
+EMAIL_URL = "zalbak87@gmail.com"   
+
+#Sponsors
+
+ELGATO_URL = "https://www.elgato.com/lm/es"
