@@ -40,11 +40,14 @@ BASE_STYLES = {
     rx.button:{
         "width":"100%",
         "height":"100%",
-        "display":"block",
         "padding": Size.SMALL.value,
         "border_radius":Size.DEFAULT.value,
         "color": TextColors.HEADER.value,
         "background_color": Colors.CONTENT.value,
+        "white_space": "normal",
+        "display": "flex",
+        "justify-content": "flex-start",
+        "align-items": "center",
         "_hover": {
             "background_color": Colors.SECUNDARY.value,
         }

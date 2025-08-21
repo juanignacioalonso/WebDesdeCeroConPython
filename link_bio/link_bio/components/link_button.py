@@ -11,6 +11,7 @@ def link_button(title:str, body:str, image: str, url:str ) -> rx.Component:
                    width=styles.Size.BIG.value,
                    heigth=styles.Size.BIG.value,
                    margin=Size.MEDIUM.value,
+                   alt=title
                ),
                rx.vstack(
                    rx.text(title, style=styles.button_title_style),
@@ -18,8 +19,10 @@ def link_button(title:str, body:str, image: str, url:str ) -> rx.Component:
                    spacing="2",
                    align_items="start",
                    margin=Size.ZERO.value,
+                   padding_rigth = Size.SMALL.value,
                ),
                 spacing="4",
+                width = "100%"
             )
         ),
         href=url,

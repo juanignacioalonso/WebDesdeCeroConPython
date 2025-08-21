@@ -10,11 +10,13 @@ def sponsors() -> rx.Component:
         rx.hstack(
             link_sponsor(
                 "elgato.png",
-                c.ELGATO_URL
+                c.ELGATO_URL,
+                "Logotipo de el Gato"
             ),
             link_sponsor(
                 "compragamer.png",
-                c.COMPRAGAMER_URL
+                c.COMPRAGAMER_URL,
+                "Logotipo de Compra Gamer"
             ),
             spacing='9'
         ),

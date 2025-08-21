@@ -12,6 +12,7 @@ def footer() -> rx.Component:
             heigth="auto",
             width="300px",
             align_self="center",
+            alt="Logotipo de MaJu Automatizaciones "
             ),
         rx.link(
             f"2021-{datetime.date.today().year} DESARROLLADOR PYTHON",
@@ -27,5 +28,6 @@ def footer() -> rx.Component:
                 ),
         marginBottom=Size.BIG.value,
         padding_bottom=Size.MEDIUM.value,
+        padding_x=Size.BIG.value,
         color=TextColors.FOOTER.value,
     )

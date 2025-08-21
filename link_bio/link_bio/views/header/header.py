@@ -39,15 +39,18 @@ def header() -> rx.Component:
                 rx.hstack(
                     link_icon(
                         "icons/github2.svg",
-                        c.GIT_URL
+                        c.GIT_URL,
+                        "GitHub"
                         ),
                     link_icon(
                         "icons/linkedin2.svg",
-                        c.LINKEDIN_URL
+                        c.LINKEDIN_URL,
+                        "Linkeding"
                         ),
                     link_icon(
                         "icons/discord2.svg",
-                        c.DISCORD_URL
+                        c.DISCORD_URL,
+                        "Discord"
                         ),
                 ),
                 alignItems="Start",
