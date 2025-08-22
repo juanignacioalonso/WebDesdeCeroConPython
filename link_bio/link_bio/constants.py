@@ -1,3 +1,10 @@
+
+
+#Cabecera
+
+GIT_URL_CABECERA = "https://github.com/mouredev/python-web"
+WHATSAPP = "https://web.whatsapp.com/"
+
 #Comunidad
 
 TWITCH_URL = "https://twich.tx/mouredev"

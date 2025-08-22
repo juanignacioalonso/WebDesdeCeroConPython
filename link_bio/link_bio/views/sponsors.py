@@ -18,7 +18,11 @@ def sponsors() -> rx.Component:
                 c.COMPRAGAMER_URL,
                 "Logotipo de Compra Gamer"
             ),
-            spacing='9'
+            spacing='9',
+            flex_wrap="wrap",
+            justify="center",
+            align="center",
+            width="100%",
         ),
         width = "100%",
         alingItems = "start"

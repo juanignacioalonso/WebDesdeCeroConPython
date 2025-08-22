@@ -38,8 +38,8 @@ def header() -> rx.Component:
                 ),
                 rx.hstack(
                     link_icon(
-                        "icons/github2.svg",
-                        c.GIT_URL,
+                        "icons/whatsapp.svg",
+                        c.WHATSAPP,
                         "GitHub"
                         ),
                     link_icon(

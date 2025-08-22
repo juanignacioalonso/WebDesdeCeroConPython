@@ -1,9 +1,9 @@
 import reflex as rx
 from link_bio.components.navbar import navbar
 from link_bio.components.footer import footer
-from link_bio.views.header.header import header
-from link_bio.views.links.links import links
-from link_bio.views.sponsors.sponsors import sponsors
+from link_bio.views.header import header
+from link_bio.views.links import links
+from link_bio.views.sponsors import sponsors
 import link_bio.styles.styles as styles
 from link_bio.styles.styles import Size as Size
 
@@ -33,8 +33,18 @@ app = rx.App(
     stylesheets=styles.STYLESHEETS,
     style=styles.BASE_STYLES
 )
+
+title = "Juan Ignacio Alonso - Desarrollador Full stack"
+description= "Hola mi nombre es Juan Ignacio Alonso hace 5 años que soy desarrollador web freelancer."
+
 app.add_page(
     index,
-    title="Juan Ignacio Alonso - Desarrollador Full stack",
-    description= "Hola mi nombre es Juan Ignacio Alonso hace 5 años que soy desarrollador web freelancer."
+    title=title,
+    description= description,
+    image="juan.jpg",
+    meta=[
+        {"name": "og:type","content":"website"},
+        {"name": "og:title","content":title},
+        {"name": "og:description","content":description},
+    ]
 )
