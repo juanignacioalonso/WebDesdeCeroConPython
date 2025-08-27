@@ -9,12 +9,12 @@ def sponsors() -> rx.Component:
         title("Colaboran"),
         rx.hstack(
             link_sponsor(
-                "elgato.png",
+                "/elgato.png",
                 c.ELGATO_URL,
                 "Logotipo de el Gato"
             ),
             link_sponsor(
-                "compragamer.png",
+                "/compragamer.png",
                 c.COMPRAGAMER_URL,
                 "Logotipo de Compra Gamer"
             ),

@@ -13,7 +13,7 @@ cards_data = [
     {"title": "+3", "body": "Certificaciones"},
 ]
 
-def header() -> rx.Component:
+def header(details = True) -> rx.Component:
     return rx.vstack(
         rx.hstack(
             rx.avatar(
@@ -38,17 +38,17 @@ def header() -> rx.Component:
                 ),
                 rx.hstack(
                     link_icon(
-                        "icons/whatsapp.svg",
+                        "/icons/whatsapp.svg",
                         c.WHATSAPP,
                         "GitHub"
                         ),
                     link_icon(
-                        "icons/linkedin2.svg",
+                        "/icons/linkedin2.svg",
                         c.LINKEDIN_URL,
                         "Linkeding"
                         ),
                     link_icon(
-                        "icons/discord2.svg",
+                        "/icons/discord2.svg",
                         c.DISCORD_URL,
                         "Discord"
                         ),
@@ -57,32 +57,37 @@ def header() -> rx.Component:
             ),
             spacing="7",
         ),
-
-        rx.flex(
-            rx.foreach(
-                cards_data,  # 👈 ahora recorre la lista de diccionarios
-                lambda item: rx.card(
-                    info_text(item["title"], item["body"]), 
-                    width="30%",
+        rx.cond(
+            details,
+            rx.vstack(
+                rx.flex(
+                    rx.foreach(
+                        cards_data,  # 👈 ahora recorre la lista de diccionarios
+                        lambda item: rx.card(
+                            info_text(item["title"], item["body"]), 
+                            width="30%",
+                        ),
+                    ),
+                    spacing="3",
+                    flex_wrap="wrap",
+                    width="100%",
                 ),
+
+                rx.text(
+                        """
+                        Desarrollador Full Stack con experiencia en Python 
+                        (Django) y Angular, orientado a la creación de soluciones 
+                        escalables y eficientes. Cuento con sólidos conocimientos en 
+                        bases de datos relacionales y no relacionales, despliegue en la nube (AWS) 
+                        y metodologías ágiles. Con capacidad para desempeñarme también en roles de soporte técnico.
+                        Busco integrarme a equipos dinámicos con enfoque en calidad, buenas prácticas y resultados.
+                        """,
+                        color=TextColors.BODY.value,
+                        font_size=Size.MEDIUM.value,
+                        )
             ),
-            spacing="3",
-            flex_wrap="wrap",
-            width="100%",
-        ),
 
-        rx.text(
-                """
-                Desarrollador Full Stack con experiencia en Python 
-                (Django) y Angular, orientado a la creación de soluciones 
-                escalables y eficientes. Cuento con sólidos conocimientos en 
-                bases de datos relacionales y no relacionales, despliegue en la nube (AWS) 
-                y metodologías ágiles. Con capacidad para desempeñarme también en roles de soporte técnico.
-                Busco integrarme a equipos dinámicos con enfoque en calidad, buenas prácticas y resultados.
-                """,
-                color=TextColors.BODY.value,
-                font_size=Size.MEDIUM.value,
-                ),
+        ),
         spacing="6",
         alignItems="Start",
     )

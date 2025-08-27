@@ -25,3 +25,9 @@ EMAIL_URL = "zalbak87@gmail.com"
 #Sponsors
 
 ELGATO_URL = "https://www.elgato.com/lm/es"
+
+#Cursos
+CODE_CHALLENGES_URL = "https://retosdeprogramacion.com"
+PYTHON_COURSE_URL = "https://mouredev.link/python"
+GIT_COURSE_URL = "https://mouredev.link/git"
+SQL_COURSE_URL = "https://mouredev.link/sql"

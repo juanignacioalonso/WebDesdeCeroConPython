@@ -8,7 +8,7 @@ from link_bio.styles.colors import TextColor as TextColors
 def footer() -> rx.Component:
     return rx.vstack(
         rx.image(
-            src="logo.png",
+            src="/logo.png",
             heigth="auto",
             width="200px",
             align_self="center",
@@ -25,7 +25,7 @@ def footer() -> rx.Component:
         rx.hstack(
             rx.link(
                 rx.image(
-                    src="icons/github2.svg",
+                    src="/icons/github2.svg",
                     heigth="auto",
                     width="30px",
                     align_self="center",
