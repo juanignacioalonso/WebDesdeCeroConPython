@@ -11,3 +11,5 @@ app = rx.App(
     style=styles.BASE_STYLES
 )
 
+app.add_page(index, route="/")
+app.add_page(courses, route="/courses")

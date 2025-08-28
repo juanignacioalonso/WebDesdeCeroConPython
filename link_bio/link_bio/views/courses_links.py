@@ -34,7 +34,7 @@ def courses_links() -> rx.Component:
             "Curso de 7h desde cero para aprender los fundamentos de SQL",
             "/icons/database.svg",
             c.SQL_COURSE_URL,
-            is_external=False
+            is_external=True
             ),
             title(
             "Mucho más en"
