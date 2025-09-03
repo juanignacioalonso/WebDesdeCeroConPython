@@ -7,7 +7,7 @@ WHATSAPP = "https://web.whatsapp.com/"
 
 #Comunidad
 
-TWITCH_URL = "https://twich.tx/mouredev"
+TWITCH_URL = "https://www.twitch.tv/search?term=mouredev"
 YOUTUBE_URL = "https://youtube.com/@mouredev"
 YOUTUBE_SECONDARY_URL = "https://youtube.com/@mouredevtv"   
 DISCORD_URL = "https://discord.gg/mouredev"
