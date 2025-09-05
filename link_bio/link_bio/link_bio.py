@@ -17,5 +17,5 @@ app = rx.App(
 app.add_page(index, route="/")
 app.add_page(courses, route="/courses")
 
-app._api.add_route("/repo", repo, methods=["GET"])
-app._api.add_route("/live/{user}", live, methods=["GET"])
+app._api.add_route("/api/repo", repo, methods=["GET"])
+app._api.add_route("/api/live/{user}", live, methods=["GET"])
