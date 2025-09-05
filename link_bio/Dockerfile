@@ -11,5 +11,4 @@ RUN python3.13 -m venv $VIRTUAL_ENV
 RUN pip install --upgrade pip
 RUN $uv pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 8000
-CMD ["sh", "-c", "reflex run --env prod --backend-only --port $PORT --host 0.0.0.0"]
+CMD ["reflex", "run", "--env", "prod", "--backend-only"]
