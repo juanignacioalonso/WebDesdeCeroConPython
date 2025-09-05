@@ -7,6 +7,8 @@ config = rx.Config(
         "http://localhost:3000",
         "https://www.juandev.lat"
         "https://api.juandev.lat"
+        "http://localhost:8000/"
+
     ],
     plugins=[
         rx.plugins.SitemapPlugin(),
