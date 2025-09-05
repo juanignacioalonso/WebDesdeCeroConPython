@@ -7,6 +7,11 @@ from link_bio.views.index_links import index_links
 from link_bio.views.sponsors import sponsors
 import link_bio.styles.styles as styles
 from link_bio.styles.styles import Size as Size
+from link_bio.api.api import repo
+
+class IndexState(rx.State):
+    pass
+
 
 
 @rx.page(

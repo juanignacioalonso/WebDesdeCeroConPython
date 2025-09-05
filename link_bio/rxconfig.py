@@ -5,7 +5,8 @@ config = rx.Config(
     antd_mode=True,
     cors_allowed_origins = [
         "http://localhost:3000",
-        "https://link-bio-teal-apple.reflex.run/"
+        "https://www.juandev.lat"
+        "https://api.juandev.lat"
     ],
     plugins=[
         rx.plugins.SitemapPlugin(),
