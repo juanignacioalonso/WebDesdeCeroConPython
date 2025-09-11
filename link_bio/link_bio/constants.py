@@ -1,4 +1,5 @@
-
+# Comunes
+G_TAG = "G-3YGHT3XJFS"
 
 #Cabecera
 
