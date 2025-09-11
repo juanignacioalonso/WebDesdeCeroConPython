@@ -1,27 +1,29 @@
 import os
-import dotenv
+import dotenv 
+
+
 from supabase import create_client, Client
 
-
 class SupabaseAPI:
-    def __init__(self):
-        # Cargar variables de entorno desde .env si existe
-        dotenv.load_dotenv()
 
-        supabase_url = os.getenv("SUPABASE_URL")
-        supabase_key = os.getenv("SUPABASE_KEY")
+    dotenv.load_dotenv()
 
-        if not supabase_url or not supabase_key:
-            raise ValueError("SUPABASE_URL y SUPABASE_KEY son requeridos")
+    SUPABASE_URL = os.environ.get("SUPABASE_URL")
+    SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
+        
 
-        self.supabase: Client = create_client(supabase_url, supabase_key)
+    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-    def featured(self) -> list:
+    def feactured(self) -> list:
+
         response = self.supabase.table("feactured").select("*").execute()
 
-        featured_data = []
-        if response.data:
-            for item in response.data:
-                featured_data.append(item)
+        feactured_data = []
 
-        return featured_data
+        if len(response.data) >0:
+            for featured_item in response.data:
+                feactured_data.append(featured_item)
+
+        print(feactured_data)
+
+        return feactured_data
