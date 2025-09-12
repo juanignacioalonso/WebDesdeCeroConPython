@@ -20,7 +20,7 @@ class IndexState(rx.State):
         description= utils.index_description,
         image=utils.preview,
         meta=utils.index_meta,
-        on_load=[PageState.feactured_links]
+        on_load=[PageState.featured_links]
       
 )
 def index()-> rx.Component:
@@ -30,7 +30,7 @@ def index()-> rx.Component:
         rx.center(
             rx.vstack(
                 header(),
-                index_links(PageState.feactured_info),
+                index_links(PageState.featured_info),
                 sponsors(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",

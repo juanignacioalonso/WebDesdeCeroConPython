@@ -3,9 +3,10 @@ from link_bio.routes import Route
 from link_bio.components.link_button import link_button
 from link_bio.components.title import title
 from link_bio import constants as c
+from link_bio.state.PageState import PageState
 
 
-def index_links(feactured=[]) -> rx.Component:
+def index_links() -> rx.Component:
     return rx.vstack(
         title(
             "Comunidad"
@@ -37,23 +38,7 @@ def index_links(feactured=[]) -> rx.Component:
             c.DISCORD_URL
             ),
 
-#rx.cond(
-    #len(feactured) > 0, 
-    #rx.vstack(
-        #title("Destacado"),
-       # rx.foreach(
-            #feactured,
-           # lambda item: rx.grid(
-                #rx.link(
-                    #rx.image(src=item["image"]),
-                    #rx.text(item["title"]),
-                    #href=item["url"],
-                    #is_external=True
-                #)
-           # ),
-        #),
-    #),
-#),
+
 
 
         title(
