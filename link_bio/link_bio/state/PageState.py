@@ -13,6 +13,5 @@ class PageState(rx.State):
 
 
     async def featured_links(self):
-        data = await featured()
-        print(data)
-        #self.featured_info = await featured()
+        self.featured_info = await featured()
+        

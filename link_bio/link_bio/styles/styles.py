@@ -41,7 +41,7 @@ BASE_STYLES = {
         "width":"100%",
         "height":"100%",
         "padding": Size.SMALL.value,
-        "border_radius":Size.DEFAULT.value,
+        "borderRadius":10,
         "color": TextColors.HEADER.value,
         "background_color": Colors.CONTENT.value,
         "white_space": "normal",

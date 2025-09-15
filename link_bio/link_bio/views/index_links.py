@@ -1,12 +1,14 @@
 import reflex as rx
 from link_bio.routes import Route
+from link_bio.components.featured_link import featured_link
 from link_bio.components.link_button import link_button
 from link_bio.components.title import title
 from link_bio import constants as c
+from link_bio.model.Featured import Featured
 from link_bio.state.PageState import PageState
 
 
-def index_links(featured=[[]]) -> rx.Component:
+def index_links(featured: list[Featured]) -> rx.Component:
     return rx.vstack(
         title(
             "Comunidad"
@@ -38,7 +40,22 @@ def index_links(featured=[[]]) -> rx.Component:
             c.DISCORD_URL
             ),
 
-
+        rx.cond(
+            featured,
+            rx.vstack(
+                title("Destacado"),
+                rx.grid(
+                    rx.foreach(
+                        featured,
+                        featured_link
+                    ),
+                    columns={"base": "1", "md": "2"},
+                    spacing="4",
+                ),
+                spacing="4",
+            ),
+            
+        ),
 
 
         title(
