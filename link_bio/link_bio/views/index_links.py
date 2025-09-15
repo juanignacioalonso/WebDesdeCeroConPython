@@ -6,7 +6,7 @@ from link_bio import constants as c
 from link_bio.state.PageState import PageState
 
 
-def index_links() -> rx.Component:
+def index_links(featured=[[]]) -> rx.Component:
     return rx.vstack(
         title(
             "Comunidad"

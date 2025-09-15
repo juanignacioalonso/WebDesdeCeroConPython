@@ -5,7 +5,7 @@ from link_bio.pages.index import index
 from link_bio.pages.courses import courses
 from link_bio.api.api import fastapi_app
 
-from link_bio.api.api import repo, live
+
 
 
 

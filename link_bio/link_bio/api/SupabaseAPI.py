@@ -4,31 +4,29 @@ from supabase import create_client, Client
 from link_bio.model.Featured import Featured
 
 class SupabaseAPI:
-    dotenv.load_dotenv()
-    SUPABASE_URL: str = os.getenv("SUPABASE_URL")
-    SUPABASE_KEY: str = os.getenv("SUPABASE_KEY")
-
-
-    supabase: Client
-
     def __init__(self) -> None:
-    self.supabase = None
+        # Cargar variables de entorno
+        dotenv.load_dotenv()
+        self.SUPABASE_URL: str = os.getenv("SUPABASE_URL")
+        self.SUPABASE_KEY: str = os.getenv("SUPABASE_KEY")
 
-    def create_client(self):
-        if self.supabase is None:
-            self.supabase = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
+        if not self.SUPABASE_URL or not self.SUPABASE_KEY:
+            raise ValueError("Faltan SUPABASE_URL o SUPABASE_KEY en .env")
 
-    def featured(self) -> list:
+        # Crear cliente de supabase
+        self.supabase: Client = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
 
-        if self.supabase is None:
-            self.create_client()
-
+    def featured(self) -> list[Featured]:
         response = self.supabase.table("featured").select("*").execute()
 
-        feactured_data = []
-
-        if len(response.data) > 0:
+        featured_data = []
+        if response.data:
             for featured_item in response.data:
-                feactured_data.append(featured_item)
-
-        return feactured_data
+                featured_data.append(
+                    Featured(
+                        title=featured_item["title"],
+                        image=featured_item["image"],
+                        url=featured_item["url"],
+                    )
+                )
+        return featured_data
